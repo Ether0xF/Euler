@@ -6,10 +6,13 @@ The sum of these multiples is 23.
 Find the sum of all the multiples of 3 or 5 below 1000.
 """
 
-max = 1000
+def multiples(num):
+    result = 0
 
-result = 0
-for i in range(0,max):
-    if i % 3 == 0 or i % 5 == 0:
-        result += i
-print(result)
+    for i in range(0, num):
+        if i % 3 == 0 or i % 5 == 0:
+            result += i
+    
+    return result
+
+print(multiples(1000))
