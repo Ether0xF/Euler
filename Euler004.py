@@ -5,6 +5,7 @@
 
     Find the largest palindrome made from the product of two 3-digit numbers. 
 """
+import math
 
 # Function for judging if the given number is palindromic.
 # Transform the number into string type and then reverse the string,
@@ -29,16 +30,19 @@ def isPalindromic(num):
     
     return True
 
-def largest_palindrome(length = 3):
+def palindromicNumers(length = 3):
     p = list()
 
     for m in range(10 ** length - 1, 10 ** (length - 1) -1, -1):
-        for n in range(m, 10 ** (length - 1), -1):
+        for n in range(m, 10 ** (length - 1) - 1, -1):
             if isPalindromic(m * n):
                 p.append(m * n)
 
-    return max(p)
+    return p
+
+def largestPN(length = 3):
+    return max(palindromicNumers(length))
 
 if __name__ == '__main__':
-    print(largest_palindrome())
+    print(largestPN())
 
