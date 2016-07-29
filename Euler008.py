@@ -23,6 +23,9 @@ are 9 * 9 * 8 * 9 = 5832.
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450
 
+Find the thirteen adjacent digits in the 1000-digit number that 
+have the greatest product. What is the value of this product?
+
 """
 from operator import mul
 from functools import reduce
@@ -31,8 +34,8 @@ s = '731671765313306249192251196744265747423553491949349698352031277450632623957
 lst = list(map(int, list(s)))
 largest = 0
 
-for i in range(0, len(lst) - 4):
-    product = reduce(mul, lst[i:i+5])
+for i in range(0, len(lst) - 13):
+    product = reduce(mul, lst[i:i+13])
     if product > largest:
         largest = product
 print(largest)
